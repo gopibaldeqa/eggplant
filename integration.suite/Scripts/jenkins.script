@@ -1,4 +1,4 @@
 ﻿BeginTestCase "running test case from jenkins"
-log "hi"
+log "execution triggered with git commit"
 EndTestCase "running test case from jenkins"
 
