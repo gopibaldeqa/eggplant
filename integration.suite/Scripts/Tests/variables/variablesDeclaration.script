@@ -1,0 +1,13 @@
+﻿set deviceNumber to 12345
+log deviceNumber
+
+set global deviceGlobal to "Global Type"
+log global deviceGlobal
+
+
+set universal devUniversal to "universal number :123"
+log universal devUniversal
+
+to handle varDeclaration
+	log "passed"
+end varDeclaration

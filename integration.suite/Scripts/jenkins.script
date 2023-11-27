@@ -1,0 +1,4 @@
+﻿BeginTestCase "running test case from jenkins"
+log "hi"
+EndTestCase "running test case from jenkins"
+

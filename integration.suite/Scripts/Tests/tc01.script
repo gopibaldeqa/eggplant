@@ -1,0 +1,161 @@
+﻿
+to handle launchApplication
+	set the SearchRectangle to screen.screenPart("bottomHalf")
+	commonHandlers.clickEvent "Launch Event", "Register"
+	
+	
+end launchApplication
+
+
+to handle setChromeZoomSize
+	if ImageFound("zoomSizeImg") then
+		Click "zoomSizeImg.png"
+		
+		put ReadText(1524,73,1588,137) into zoomSize
+		log zoomSize
+		split zoomSize by "%"
+		log zoomSize
+		
+		if zoomSize is equal to 100 then
+			log "zoom size is settled"
+		else 
+			if item 1 of zoomSize is greater than 100 then
+				typetext controlKey, "-"
+				repeat until item 1 of zoomSize is equal to 100
+					
+					put ReadText(1524,73,1588,137) into zoomSize
+					log zoomSize
+					split zoomSize by "%"
+					log zoomSize
+					if item 1 of zoomSize is greater than 100 then
+						typetext controlKey, "-"
+					end if
+				end repeat
+			else
+				typetext controlKey, "+"
+				repeat until item 1 of zoomSize is equal to 100
+					typetext controlKey, "+"
+					put ReadText(1524,73,1588,137) into zoomSize
+					log zoomSize
+					split zoomSize by "%"
+					log zoomSize
+				end repeat
+			end if
+		end if
+	else 
+		log "set"
+	end if
+end setChromeZoomSize
+
+
+to handle register
+	Click text:"First Name",hotspot:[0,40]
+	commonHandlers.enterText "gopi"
+	Click text:"Last Name",hotspot:[0,40]
+	commonHandlers.enterText "balde"
+	Click text:"Your Email",hotspot:[10,50]
+	commonHandlers.enterText "gopi.balde@gmail.com"
+	
+	Click text:"Country or Area",hotspot:[10,50]
+	commonHandlers.enterText "India"
+	typetext enterKey
+	
+	Click text:"Company",hotspot:[10,50]
+	commonHandlers.enterText "Ideabytes"
+end register
+
+
+to handle readText
+
+	put ReadText(283,295,991,426) into data
+	log data
+	
+	delete "s" from data
+	log data
+end readText
+
+
+
+to handle swipeAndScroll
+	SwipeUp
+	SwipeDown [700,700]
+
+	ScrollWheelDown 100
+	ScrollWheelUp 100
+	
+	DragAndDrop "Tatras", "Trash"
+end swipeAndScroll
+
+
+
+to handle logging
+	log "log"
+	LogWarning "warning"
+	LogSuccess "success"
+	LogError "error"
+	
+end logging
+
+
+
+to handle takeScreenshot
+	CaptureScreen { Rectangle:[71,100,207,125] }
+end takeScreenshot
+
+
+
+to handle validateResponse expected
+	if imageFound(text:"abcd") then 
+		logSuccess "successfully validated "&expected
+	else 
+		logerror "successfully not validated "&expected
+	end if
+end validateResponse
+
+
+to handle connectSUT
+
+	//Connect "192.168.1.171"
+	Connect {
+		name:"Tutorial Connection",
+		type:"VNC Automatic",
+		deviceId: "TutorialSUT",
+	}
+	
+	
+end connectSUT
+
+
+to handle propertiesMethods
+
+	//click text:"REgISTER", properties:"{caseSensitive:true}"
+	click text:"not", properties:"{textDifference:1}"
+	click text:"Not areal", properties:"{ignoreSpaces:yes}"
+	click text:"NoK", properties:{textDifference:1}
+
+	commonHandlers.setProperties {styleType:"ignoreSpacesUnderscores"}
+	commonHandlers.clickEvent "Not areal" "a" 
+	
+end propertiesMethods
+
+to handle readExcel
+	set myExcelFile to workbook(ResourcePath("excel.xlsx"))
+	log myExcelFile
+	
+	set myWorkBook to worksheet(myExcelFile,"1")
+	log myWorkBook
+	
+	put Sheet's cellRange(1) into Headers
+	put item 1 of Headers into VariableNames
+	log VariableNames
+end readExcel
+
+
+
+
+
+
+
+
+
+

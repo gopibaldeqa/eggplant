@@ -1,0 +1,23 @@
+﻿//only universal variable called to this file 
+
+log deviceNumber
+log global deviceGlobal
+log universal devUniversal
+
+
+//local file 
+
+
+to handle innerHandler
+	set localVar to "I am a local variable"
+	//log localVar
+	
+	set global globalVar to "I am a global variable"
+	//log global globalVar
+end innerHandler
+
+to handle localVarHand
+	innerHandler
+	log localVar
+	log global globalVar
+end localVarHand
