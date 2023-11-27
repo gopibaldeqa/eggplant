@@ -1,0 +1,4 @@
+﻿BeginTestCase "TC02"
+log "second test case 1"
+EndTestCase "TC02"
+
