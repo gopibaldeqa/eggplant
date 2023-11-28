@@ -1,0 +1,1 @@
+﻿setmyDBto {type:"mongodb", DSN:"", hostName:"mongodb://localhost:",portNum:"27017"}

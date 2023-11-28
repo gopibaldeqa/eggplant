@@ -1,3 +1,0 @@
-﻿to handle user_launch_the_browser
-	typetext windowsKey, r
-end user_launch_the_browser

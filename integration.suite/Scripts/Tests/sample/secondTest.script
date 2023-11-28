@@ -1,0 +1,4 @@
+﻿BeginTestCase "TC02"
+log "***********"
+EndTestCase "TC02"
+

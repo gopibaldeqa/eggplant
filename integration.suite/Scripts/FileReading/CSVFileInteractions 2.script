@@ -7,11 +7,11 @@ To ReadCsvData FileName,ItemNum,LineNum
 	put item ItemNum of line LineNum of file MyCsvFile into ItemValue
 	log ItemValue
 	//reading a particular line
-	put line LineNum of file MyFile into ItemsOfLine
+	put line LineNum of file MyCsvFile into ItemsOfLine
 	Log ItemsOfLine
 End ReadCsvData
 
-ReadCsvData "DataFile.csv","1","2"
+ReadCsvData "DataFile.csv","3","2"
 
 // To write data into a cell 
 To WriteDataintoCsv FileName,Value,ItemNum,LineNum

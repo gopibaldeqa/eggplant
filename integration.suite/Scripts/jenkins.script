@@ -1,4 +1,0 @@
-﻿BeginTestCase "running test case from jenkins"
-log "#########******** "
-EndTestCase "running test case from jenkins"
-

@@ -1,0 +1,39 @@
+﻿set myCSVFile to ResourcePath("DataFile.csv")
+log myCSVFile
+
+log item 2 of line 3 of file myCSVFile
+log line 2 of file myCSVFile
+
+
+"FileReading/CSVFileInteractions 2".ReadCsvData "DataFile.csv","3","2"
+
+to handle readCsvData filePath, lineNumber, itemValue
+	set myCSVFile to ResourcePath(filePath)
+	put item itemValue of line lineNumber of file myCSVFile into myData
+	log myData
+	log line of myCSVFile
+end readCsvData
+
+readCsvData "DataFile.csv", "2", "1"
+
+
+to handle writeInCsvFile filePath, value
+	set myCsvFile to ResourcePath(filePath)
+	put value into item 4 of line 4 of file myCsvFile
+end writeInCsvFile
+
+writeInCsvFile "DataFile.csv", "A4"
+
+to handle updateInCsvFile filePath, value
+	set myCsvFile to ResourcePath(filePath)
+	put value into item 4 of line 4 of file myCsvFile
+end updateInCsvFile
+
+updateInCsvFile "DataFile.csv", "D5"
+
+to handle daleteInCsvFile filePath, value
+	set myCsvFile to ResourcePath(filePath)
+	delete item 4 of line 4 of file myCsvFile
+end daleteInCsvFile
+
+daleteInCsvFile "DataFile.csv", "D4"
