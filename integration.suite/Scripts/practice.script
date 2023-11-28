@@ -22,7 +22,7 @@ log listCount
 put the third item of ["one","two","three"] into listCount
 log listCount
 
-
+ 
 //lesson - 7 Advanced scripting
 
 set var to 9
