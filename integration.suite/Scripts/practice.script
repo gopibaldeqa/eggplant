@@ -1,4 +1,4 @@
-﻿
+﻿ 
 
 if imageFound(text:"eggplant") then 
 	click ImageLocation()
@@ -40,9 +40,9 @@ set myVar to "1"
 if myVar is a letter
 	log "its letter"
 else if myVar is a number
-log "its a number"
+	log "its a number"
 else
-log "its neither a letter or a number"
+	log "its neither a letter or a number"
 end if
 
 
