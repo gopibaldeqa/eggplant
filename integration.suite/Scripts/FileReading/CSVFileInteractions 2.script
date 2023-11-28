@@ -1,0 +1,41 @@
+﻿------------------------Using CSV--------------
+
+// Read data from a particular cell
+To ReadCsvData FileName,ItemNum,LineNum
+	set MyCsvFile to ResourcePath(FileName)
+	//reading a particular item from a particular line
+	put item ItemNum of line LineNum of file MyCsvFile into ItemValue
+	log ItemValue
+	//reading a particular line
+	put line LineNum of file MyFile into ItemsOfLine
+	Log ItemsOfLine
+End ReadCsvData
+
+ReadCsvData "DataFile.csv","1","2"
+
+// To write data into a cell 
+To WriteDataintoCsv FileName,Value,ItemNum,LineNum
+	set MyCsvFile to ResourcePath(FileName)
+	//putting value into a pariticular cell by giving line number and item number
+	put Value into item ItemNum of line LineNum of file MyCsvFile
+End WriteDataintoCsv
+
+WriteDataintoCsv "Login.csv","active",6,3
+
+//Update Data in a particular cell
+To UpdateCsvData FileName,Value,ItemNum,LineNum
+	set MyCsvFile to ResourcePath(FileName)
+	//putting value into a pariticular cell by giving line number and item number
+	put Value into item ItemNum of line LineNum of file MyCsvFile
+End UpdateCsvData
+
+UpdateCsvData "DataFile.csv","Medameni",2,2
+
+//Delete the data in a particular cell
+To DeleteCsvData FileName,ItemNum,LineNum
+	set MyCsvFile to ResourcePath(FileName)
+	//deleting value into a pariticular cell by giving line number and item number
+	delete item ItemNum of line LineNum of file MyCsvFile
+End DeleteCsvData
+
+DeleteCsvData "DataFile.csv",2,2

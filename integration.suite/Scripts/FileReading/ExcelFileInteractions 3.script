@@ -1,0 +1,48 @@
+﻿-------------------------Using Excel as Worksheet--------------
+
+//reading Excel from Entire row
+to handle ExcelFileReadingEntirerow ExcelFileName,SheetNumber,RowNum
+	set MyExcelFile to Workbook(ResourcePath(ExcelFileName))
+	set MySheet to worksheet(MyExcelFile,SheetNumber)
+	put MySheet.cellRange (RowNum) into Global RowData
+	Log Global RowData
+end ExcelFileReadingEntirerow
+
+ExcelFileReadingEntirerow "ExcelInteractionsFile.xlsx","Sheet1",11
+
+//reading Excel data from a Particular Cell
+to handle ExcelFileReading ExcelFileName,SheetNumber,RowNum,ColNum
+	set MyExcelFile to Workbook(ResourcePath(ExcelFileName))
+	set MySheet to worksheet(MyExcelFile,SheetNumber)
+	Log MySheet.cell(RowNum,ColNum)
+end ExcelFileReading
+
+ExcelFileReading "ExcelInteractionsFile.xlsx","Sheet1","3","2"
+
+//Write Excel data into a Particular Cell
+to handle WritingDataIntoCell ExcelFileName,SheetNumber,RowNum,ColNum,Data
+	set MyExcelFile to Workbook(ResourcePath(ExcelFileName))
+	set MySheet to worksheet(MyExcelFile,SheetNumber)
+	put Data into MySheet.cell(RowNum,ColNum)
+end WritingDataIntoCell
+
+WritingDataIntoCell "ExcelInteractionsFile.xlsx","Sheet1","3","4","test"
+
+//Update Excel data for a Particular Cell
+to handle UpdateCellData ExcelFileName,SheetNumber,RowNum,ColNum,Data
+	set MyExcelFile to Workbook(ResourcePath(ExcelFileName))
+	set MySheet to worksheet(MyExcelFile,SheetNumber)
+	put MySheet.cell(RowNum,ColNum)&& Data into MySheet.cell(RowNum,ColNum)
+	Log MySheet.cell(RowNum,ColNum)
+end UpdateCellData
+
+UpdateCellData "ExcelInteractionsFile.xlsx","Sheet1","3","2","user"
+
+//Delete Excel data from a Particular Cell
+to handle DeleteCellData ExcelFileName,SheetNumber,RowNum,ColNum
+	set MyExcelFile to Workbook(ResourcePath(ExcelFileName))
+	set MySheet to worksheet(MyExcelFile,SheetNumber)
+	put "" into MySheet.cell(RowNum,ColNum)
+end DeleteCellData
+
+DeleteCellData "ExcelInteractionsFile.xlsx","Sheet1","3","2"
