@@ -1,0 +1,28 @@
+{
+    URLparameters = (
+	{
+	    checkedNumber = <*BY>;
+	    param = drilldowns;
+	    showCheckedNumber = <*BY>;
+	    value = Nation;
+	},
+	{
+	    checkedNumber = <*BY>;
+	    param = measures;
+	    showCheckedNumber = <*BY>;
+	    value = Population;
+	}
+    );
+    authenticationType = None;
+    httpVerb = GET;
+    oauth1Token = "";
+    password = "";
+    requestBody = "";
+    requestBodyFormat = "JSON (application/json)";
+    requestHeaders = "<![CDATA[]]>";
+    requests = "";
+    testResults = "";
+    testScript = "";
+    url = "https://datausa.io/api/data?drilldowns=Nation&measures=Population";
+    userName = "";
+}

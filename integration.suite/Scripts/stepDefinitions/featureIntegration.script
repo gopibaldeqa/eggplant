@@ -1,4 +1,5 @@
 ﻿to handle user_launch_the_browser
-	typetext windowsKey, r
-	
+	//typetext windowsKey, r
+	log "browser launched"
 end user_launch_the_browser
+

@@ -1,0 +1,60 @@
+﻿--Calling the API test from the script
+put GetListOfModels() into APIResponse
+put APIResponse.responseBody into JSONResponse
+put JSONValue(JSONResponse) into ResponseValue
+log ResponseValue
+repeat with each value of ResponseValue
+	if repeatindex()=1 then
+		//log value.modeluuid
+		put value.modeluuid into Global ModelID
+	end if
+	
+end repeat
+put Global ModelID into modelID
+log modelID
+
+
+put DummyAPI().responseBody into Response
+//log Response
+put JSONValue(Response) into ResponseValue
+//log ResponseValue
+put ResponseValue.data into EmpData
+put item 1 of EmpData into Emp1
+put Emp1.id into Global EmpID
+
+put Global EmpID into EmpID
+
+
+put GetDummySpecificEmpDetails().responseBody into APIResponse
+put JSONValue(APIResponse) into ResponseValue1
+log ResponseValue1
+--Passing the value from the above response from GetListOfModels API in the below GetListofModelsActions API Request 
+(*
+put GetListOfModelActions() into APIResponse1
+put APIResponse1.responseBody into JSONResponse
+put JSONValue(JSONResponse) into ResponseValue1
+log ResponseValue1
+
+*)
+
+
+
+
+
+--Creating An API to get the list of Employees
+GetEmployeeData "https://dummy.restapiexample.com/api/v1/employee/1"
+
+to GetEmployeeData URL
+	put URL into authURL
+	get url URL
+	log it
+end GetEmployeeData
+
+
+
+
+
+
+
+
+

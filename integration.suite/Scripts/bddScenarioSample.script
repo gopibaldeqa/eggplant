@@ -1,0 +1,12 @@
+﻿
+to handle user_launch_the_browser
+	log "browser launched"
+end user_launch_the_browser
+
+to handle user_enters_url
+	log "url entered"
+end user_enters_url
+
+to handle user_verifies_login_page
+	log "verified"
+end user_verifies_login_page

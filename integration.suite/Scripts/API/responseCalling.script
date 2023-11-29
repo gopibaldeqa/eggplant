@@ -1,0 +1,10 @@
+﻿put firstApi().responseBody into response
+//log response
+//log JSONFormat(response)
+//log JSONValue(response)
+
+put JSONValue(response) into response
+//log response.data
+log item 1 of response.data
+put item 1 of response.data into itemOne
+log item 1 of itemOne
