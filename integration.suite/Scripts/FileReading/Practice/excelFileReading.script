@@ -1,0 +1,56 @@
+﻿to handle readExcelRowData filePath, sheetName, rowNum
+
+	set myExcelData to ResourcePath(filePath)
+	set workBookExcel to workbook(myExcelData)
+	set worksheetExcel to worksheet(workBookExcel,sheetName)
+	set Global rowData to worksheetExcel.cellRange(rowNum)
+	log Global rowData
+end readExcelRowData
+
+readExcelRowData "TestData.xlsx", "Sheet1", 2
+
+to handle readCellData filePath, sheetName,colNum, rowNum
+
+	set myExcelData to ResourcePath(filePath)
+	set workBookExcel to workbook(myExcelData)
+	set worksheetExcel to worksheet(workBookExcel,sheetName)
+	set cellData to worksheetExcel.cell(colNum, rowNum)
+	log cellData
+end readCellData
+
+readCellData "TestData.xlsx", "Sheet1", 1,1
+
+to handle getExcelRowsLength filePath, sheetName
+
+	set myExcelData to ResourcePath(filePath)
+	set workBookExcel to workbook(myExcelData)
+	set worksheetExcel to worksheet(workBookExcel,sheetName)
+	//set Global rowData to worksheetExcel.cellRange(rowNum)
+	//log Global rowData
+	
+	//put cellRange(3) of worksheetExcel into firstRow -- Assigns a list of lists containing the values of row 1 to the firstRow variable
+	//log firstRow
+	(*	set rowCount to JSONValue(firstRow)
+	log rowCount*)
+	
+	//put worksheetExcel.cellRange ("A3", "A10") into columnsBasic --creates a list of lists for a range of cells
+	//log columnsBasic
+	
+	(*	put cellRange("E:E") of worksheetExcel into columnsBasic -- using colons, create a list of lists for a range of columns
+	LOG item 10 of columnsBasic
+	LOG last item of columnsBasic
+	log length of columnsBasic*)
+	put number of items of cellRange("H") of worksheetExcel into rowLength
+	assert rowLength-1 equals 17539
+	
+end getExcelRowsLength
+
+getExcelRowsLength "sravanData.xlsx", "IRP"
+
+
+
+
+
+
+
+

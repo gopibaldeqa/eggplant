@@ -1,0 +1,5 @@
+﻿set jsonData to ResourcePath("example.json")
+//log item 1 of file jsonData
+
+log item 1 of line 1 of file jsonData
+

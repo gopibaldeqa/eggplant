@@ -40,7 +40,6 @@ log ResponseValue1
 
 
 
-
 --Creating An API to get the list of Employees
 GetEmployeeData "https://dummy.restapiexample.com/api/v1/employee/1"
 

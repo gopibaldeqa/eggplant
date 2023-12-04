@@ -1,0 +1,12 @@
+[
+  {
+    "name": "NAME_01",
+    "email": "EMAIL_01",
+    "body": "BODY_01"
+  },
+  {
+    "name": "NAME_02",
+    "email": "EMAIL_02",
+    "body": "BODY_02"
+  }
+]
